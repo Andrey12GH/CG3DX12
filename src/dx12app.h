@@ -26,6 +26,7 @@ private:
 
     int mWidth;
     int mHeight;
+    bool mOwnsComInitialization;
 
     std::unique_ptr<DX12Renderer> mRenderer;
 };

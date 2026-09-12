@@ -1,0 +1,102 @@
+# Demonstration material library. The renderer also supports PNG, JPG and BMP
+# map_Kd files through WIC. Different Kd values make material assignment visible.
+
+newmtl arch
+Kd 0.72 0.62 0.48
+map_Kd textures/checker.ppm
+
+newmtl bricks
+Kd 0.76 0.32 0.24
+map_Kd textures/checker.ppm
+
+newmtl ceiling
+Kd 0.82 0.82 0.78
+map_Kd textures/checker.ppm
+
+newmtl chain
+Kd 0.30 0.32 0.36
+map_Kd textures/checker.ppm
+
+newmtl column_a
+Kd 0.80 0.70 0.55
+map_Kd textures/checker.ppm
+
+newmtl column_b
+Kd 0.68 0.58 0.46
+map_Kd textures/checker.ppm
+
+newmtl column_c
+Kd 0.88 0.80 0.65
+map_Kd textures/checker.ppm
+
+newmtl details
+Kd 0.42 0.38 0.32
+map_Kd textures/checker.ppm
+
+newmtl fabric_a
+Kd 0.72 0.18 0.16
+map_Kd textures/checker.ppm
+
+newmtl fabric_c
+Kd 0.18 0.42 0.72
+map_Kd textures/checker.ppm
+
+newmtl fabric_d
+Kd 0.68 0.54 0.18
+map_Kd textures/checker.ppm
+
+newmtl fabric_e
+Kd 0.32 0.62 0.30
+map_Kd textures/checker.ppm
+
+newmtl fabric_f
+Kd 0.56 0.28 0.66
+map_Kd textures/checker.ppm
+
+newmtl fabric_g
+Kd 0.74 0.48 0.28
+map_Kd textures/checker.ppm
+
+newmtl flagpole
+Kd 0.34 0.34 0.36
+map_Kd textures/checker.ppm
+
+newmtl floor
+Kd 0.52 0.48 0.40
+map_Kd textures/checker.ppm
+
+newmtl leaf
+Kd 0.28 0.58 0.25
+map_Kd textures/checker.ppm
+
+newmtl Material__25
+Kd 0.66 0.62 0.54
+map_Kd textures/checker.ppm
+
+newmtl Material__298
+Kd 0.50 0.46 0.38
+map_Kd textures/checker.ppm
+
+newmtl Material__47
+Kd 0.78 0.70 0.58
+map_Kd textures/checker.ppm
+
+newmtl Material__57
+Kd 0.58 0.54 0.48
+map_Kd textures/checker.ppm
+
+newmtl roof
+Kd 0.46 0.25 0.20
+map_Kd textures/checker.ppm
+
+newmtl vase
+Kd 0.26 0.48 0.62
+map_Kd textures/checker.ppm
+
+newmtl vase_hanging
+Kd 0.54 0.36 0.24
+map_Kd textures/checker.ppm
+
+newmtl vase_round
+Kd 0.34 0.58 0.64
+map_Kd textures/checker.ppm

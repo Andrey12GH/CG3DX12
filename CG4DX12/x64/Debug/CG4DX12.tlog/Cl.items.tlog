@@ -1,5 +1,5 @@
-C:\Users\User\Desktop\DirectX12-main\main.cpp;C:\Users\User\Desktop\CG3DX12\CG4DX12\x64\Debug\main.obj
-C:\Users\User\Desktop\DirectX12-main\src\dx12app.cpp;C:\Users\User\Desktop\CG3DX12\CG4DX12\x64\Debug\dx12app.obj
-C:\Users\User\Desktop\DirectX12-main\src\dx12renderer.cpp;C:\Users\User\Desktop\CG3DX12\CG4DX12\x64\Debug\dx12renderer.obj
-C:\Users\User\Desktop\DirectX12-main\src\parcer.cpp;C:\Users\User\Desktop\CG3DX12\CG4DX12\x64\Debug\parcer.obj
-C:\Users\User\Desktop\DirectX12-main\src\wc.cpp;C:\Users\User\Desktop\CG3DX12\CG4DX12\x64\Debug\wc.obj
+D:\Desktop\CG2_1\main.cpp;D:\Desktop\CG2_1\CG4DX12\x64\Debug\main.obj
+D:\Desktop\CG2_1\src\dx12app.cpp;D:\Desktop\CG2_1\CG4DX12\x64\Debug\dx12app.obj
+D:\Desktop\CG2_1\src\renderer_textured.cpp;D:\Desktop\CG2_1\CG4DX12\x64\Debug\renderer_textured.obj
+D:\Desktop\CG2_1\src\objloader.cpp;D:\Desktop\CG2_1\CG4DX12\x64\Debug\objloader.obj
+D:\Desktop\CG2_1\src\wc.cpp;D:\Desktop\CG2_1\CG4DX12\x64\Debug\wc.obj

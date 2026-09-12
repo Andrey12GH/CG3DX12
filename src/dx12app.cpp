@@ -6,12 +6,16 @@
 #include <memory>
 
 DX12App::DX12App(HINSTANCE hInstance)
-    : mHInstance(hInstance), mHwnd(nullptr), mWidth(800), mHeight(600)
+    : mHInstance(hInstance), mHwnd(nullptr), mWidth(800), mHeight(600),
+      mOwnsComInitialization(false)
 {
 }
 
 DX12App::~DX12App()
 {
+    mRenderer.reset();
+    if (mOwnsComInitialization)
+        CoUninitialize();
 }
 
 bool DX12App::InitWindow(int width, int height)
@@ -26,6 +30,11 @@ bool DX12App::InitWindow(int width, int height)
 
 bool DX12App::Initialize(int width, int height)
 {
+    const HRESULT comResult = CoInitializeEx(nullptr, COINIT_MULTITHREADED);
+    mOwnsComInitialization = SUCCEEDED(comResult);
+    if (FAILED(comResult) && comResult != RPC_E_CHANGED_MODE)
+        return false;
+
     if (!InitWindow(width, height))
         return false;
 

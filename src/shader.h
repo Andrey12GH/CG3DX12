@@ -1,9 +1,10 @@
 #pragma once
+
 #include <string>
 
 namespace Shaders
 {
-    inline std::string VertexShader = R"(
+    inline const std::string VertexShader = R"(
     cbuffer ObjectCB : register(b0)
     {
         matrix world;
@@ -16,6 +17,7 @@ namespace Shaders
         float3 position : POSITION;
         float4 color : COLOR;
         float3 normal : NORMAL;
+        float2 texcoord : TEXCOORD;
     };
 
     struct PSInput
@@ -23,21 +25,22 @@ namespace Shaders
         float4 position : SV_POSITION;
         float4 color : COLOR;
         float3 normal : NORMAL;
+        float2 texcoord : TEXCOORD;
     };
 
     PSInput main(VSInput input)
     {
         PSInput output;
-        float4 worldPos = mul(float4(input.position,1), world);
-        output.position = mul(worldPos, view);
-        output.position = mul(output.position, projection);
+        const float4 worldPosition = mul(float4(input.position, 1.0), world);
+        output.position = mul(mul(worldPosition, view), projection);
         output.color = input.color;
-        output.normal = input.normal;
+        output.normal = mul(input.normal, (float3x3)world);
+        output.texcoord = input.texcoord;
         return output;
     }
     )";
 
-    inline std::string PixelShader = R"(
+    inline const std::string PixelShader = R"(
     cbuffer LightCB : register(b1)
     {
         float3 lightDir;
@@ -46,22 +49,35 @@ namespace Shaders
         float4 diffuseColor;
     };
 
+    cbuffer MaterialCB : register(b2)
+    {
+        float4 materialColor;
+        float2 uvScale;
+        float2 uvOffset;
+    };
+
+    Texture2D diffuseTexture : register(t0);
+    SamplerState textureSampler : register(s0);
+
     struct PSInput
     {
         float4 position : SV_POSITION;
         float4 color : COLOR;
         float3 normal : NORMAL;
+        float2 texcoord : TEXCOORD;
     };
 
     float4 main(PSInput input) : SV_TARGET
     {
-        float3 n = normalize(input.normal);
-        float NdotL = max(dot(n, -lightDir), 0.0);
+        const float2 animatedUV = input.texcoord * uvScale + uvOffset;
+        const float4 texel = diffuseTexture.Sample(textureSampler, animatedUV);
 
-        float4 baseColor = float4(0.8, 0.3, 0.3, 1.0);
+        const float3 normal = normalize(input.normal);
+        const float diffuseAmount = max(dot(normal, -lightDir), 0.0);
+        const float4 lighting = ambientColor + diffuseColor * diffuseAmount;
+        const float4 surface = texel * materialColor * input.color;
 
-        float4 finalColor = baseColor * (ambientColor + diffuseColor * NdotL);
-        return finalColor;
+        return float4(surface.rgb * lighting.rgb, surface.a);
     }
     )";
 }

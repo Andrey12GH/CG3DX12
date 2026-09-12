@@ -19,18 +19,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\DirectX12-main\main.cpp" />
-    <ClCompile Include="..\DirectX12-main\src\dx12app.cpp" />
-    <ClCompile Include="..\DirectX12-main\src\dx12renderer.cpp" />
-    <ClCompile Include="..\DirectX12-main\src\parcer.cpp" />
-    <ClCompile Include="..\DirectX12-main\src\wc.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\dx12app.cpp" />
+    <ClCompile Include="src\renderer_textured.cpp" />
+    <ClCompile Include="src\gbuffer.cpp" />
+    <ClCompile Include="src\objloader.cpp" />
+    <ClCompile Include="src\wc.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\DirectX12-main\src\dx12app.h" />
-    <ClInclude Include="..\DirectX12-main\src\dx12renderer.h" />
-    <ClInclude Include="..\DirectX12-main\src\parcer.h" />
-    <ClInclude Include="..\DirectX12-main\src\shader.h" />
-    <ClInclude Include="..\DirectX12-main\src\wc.h" />
+    <ClInclude Include="src\dx12app.h" />
+    <ClInclude Include="src\dx12renderer.h" />
+    <ClInclude Include="src\gbuffer.h" />
+    <ClInclude Include="src\parcer.h" />
+    <ClInclude Include="src\rendering_system.h" />
+    <ClInclude Include="src\shader.h" />
+    <ClInclude Include="src\wc.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>

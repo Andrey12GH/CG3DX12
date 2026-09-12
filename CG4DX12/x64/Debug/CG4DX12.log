@@ -1,2 +1,7 @@
-﻿  dx12renderer.cpp
-  CG4DX12.vcxproj -> C:\Users\User\Desktop\CG3DX12\x64\Debug\CG4DX12.exe
+﻿  main.cpp
+  dx12app.cpp
+  dx12renderer.cpp
+  parcer.cpp
+  wc.cpp
+  Создание кода...
+  CG4DX12.vcxproj -> C:\Users\TBG\Desktop\CG2_1\x64\Debug\CG4DX12.exe
